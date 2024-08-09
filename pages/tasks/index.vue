@@ -196,6 +196,7 @@ export default {
     this.tasks = await this.$axios.get('/task', {
       params: { limit: 8 },
     })
+    return
   },
   methods: {},
 }
