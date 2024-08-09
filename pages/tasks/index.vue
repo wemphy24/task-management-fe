@@ -54,129 +54,123 @@
         </div>
       </div>
 
-      <div class="flex-auto block py-8 pt-6 px-9">
-        <div class="overflow-x-auto">
-          <table class="w-full my-0 align-middle text-dark border-neutral-200">
-            <thead class="align-bottom">
-              <tr class="font-semibold text-[0.95rem] text-secondary-dark">
-                <th class="text-start">Title</th>
-                <th class="text-end">Description</th>
-                <th class="text-end">Due Date</th>
-                <th class="text-end">Assign By</th>
-                <th class="text-end">Assign To</th>
-                <th class="text-end">Start</th>
-                <th class="text-end">Complete</th>
-                <th class="text-end">Status</th>
-                <th class="text-end">Detail</th>
-              </tr>
-            </thead>
-            <tbody>
-              <p v-if="$fetchState.pending">Fetching tasks...</p>
-              <p v-else>Task not found</p>
-              <tr
-                class="border-b border-dashed last:border-b-0"
-                v-for="task in tasks.data.result.data"
-                :key="task.id"
-              >
-                <td class="p-3 pl-0">
-                  <div class="flex items-center">
-                    <div class="flex flex-col justify-start">
-                      <p
-                        class="mb-1 font-semibold transition-colors duration-200 ease-in-out text-lg/normal text-secondary-inverse hover:text-primary"
-                      >
-                        {{ task.title }}
-                      </p>
-                    </div>
-                  </div>
-                </td>
-                <td class="pr-0 text-end">
-                  <span
-                    class="font-semibold text-light-inverse text-md/normal"
-                    >{{ task.description }}</span
-                  >
-                </td>
-                <td class="pr-0 text-end">
-                  <span
-                    class="text-center align-baseline inline-flex px-2 py-1 mr-auto items-center font-semibold text-base/none text-success bg-success-light rounded-lg"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="w-5 h-5 mr-1"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
-                      />
-                    </svg>
-                    {{ task.due_date }}
-                  </span>
-                </td>
-                <td class="p-3 pr-12 text-end">
-                  <span
-                    class="text-center align-baseline inline-flex px-4 py-3 mr-auto items-center font-semibold text-[.95rem] leading-none text-primary bg-primary-light rounded-lg"
-                  >
-                    {{ task.assign_by }}
-                  </span>
-                </td>
-                <td class="pr-0 text-start">
-                  <span
-                    class="font-semibold text-light-inverse text-md/normal"
-                    >{{ task.id }}</span
-                  >
-                </td>
+      <!-- <p v-if="$fetchState.pending">Fetching teams...</p>
+      <div class="flex flex-col" v-else>
+        <div
+          class="items-center card py-6 md:!py-10 md:!px-[38px] !gap-y-0"
+          v-for="task in tasks.data.result.data"
+          :key="task.id"
+        >
+          <a
+            href="#"
+            class="absolute inset-0 focus:ring-2 ring-primary rounded-[26px]"
+          ></a>
 
-                <td class="p-3 pr-0 text-end">
-                  <span
-                    class="font-semibold text-light-inverse text-md/normal"
-                    >{{ task.task_start }}</span
-                  >
-                </td>
-                <td class="p-3 pr-0 text-end">
-                  <span
-                    class="font-semibold text-light-inverse text-md/normal"
-                    >{{ task.task_complete }}</span
-                  >
-                </td>
-                <td class="p-3 pr-0 text-end">
-                  <span
-                    class="font-semibold text-light-inverse text-md/normal"
-                    >{{ task.status }}</span
-                  >
-                </td>
-                <td class="p-3 pr-0 text-end">
-                  <button
-                    class="ml-auto relative text-secondary-dark bg-light-dark hover:text-primary flex items-center h-[25px] w-[25px] text-base font-medium leading-normal text-center align-middle cursor-pointer rounded-2xl transition-colors duration-200 ease-in-out shadow-none border-0 justify-center"
-                  >
-                    <span
-                      class="flex items-center justify-center p-0 m-0 leading-none shrink-0"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="w-4 h-4"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="mt-6 mb-1 font-semibold text-center text-dark">
+            {{ task.title }}
+            {{ task.description }}
+            {{ task.due_date }}
+            {{ task.assign_by }}
+            {{ task.user_id }}
+            {{ task.status }}
+            {{ task.task_start }}
+            {{ task.task_complete }}
+          </div>
         </div>
-      </div>
+      </div> -->
+
+      <table class="items-center bg-transparent w-full border-collapse">
+        <thead>
+          <tr>
+            <th
+              class="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            >
+              Title
+            </th>
+            <th
+              class="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            >
+              Description
+            </th>
+            <th
+              class="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            >
+              Due Date
+            </th>
+            <th
+              class="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            >
+              Assign By
+            </th>
+            <th
+              class="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            >
+              User Id
+            </th>
+            <th
+              class="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            >
+              Status
+            </th>
+            <th
+              class="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            >
+              Start
+            </th>
+            <th
+              class="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            >
+              Complete
+            </th>
+          </tr>
+        </thead>
+        <p v-if="$fetchState.pending">Fetching teams...</p>
+        <tbody v-else>
+          <tr v-for="task in tasks.data.result.data" :key="task.id">
+            <th
+              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700"
+            >
+              {{ task.title }}
+            </th>
+            <td
+              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            >
+              {{ task.description }}
+            </td>
+            <td
+              class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            >
+              {{ task.due_date }}
+            </td>
+            <td
+              class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            >
+              {{ task.assign_by }}
+            </td>
+            <td
+              class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            >
+              {{ task.user_id }}
+            </td>
+            <td
+              class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            >
+              {{ task.status }}
+            </td>
+            <td
+              class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            >
+              {{ task.task_start }}
+            </td>
+            <td
+              class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+            >
+              <i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
+              {{ task.task_complete }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </section>
   </div>
 </template>
@@ -194,7 +188,7 @@ export default {
 
   async fetch() {
     this.tasks = await this.$axios.get('/task', {
-      params: { limit: 8 },
+      params: { id: this.$route.params.id, limit: 8 },
     })
     return
   },
