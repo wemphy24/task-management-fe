@@ -8,10 +8,14 @@
         Manage your task with your team
       </p>
 
-      <NuxtLink to="/tasks" class="w-full btn btn-primary mt-4">
+      <NuxtLink
+        v-if="this.$auth.user"
+        to="/tasks"
+        class="w-full btn btn-primary mt-4"
+      >
         Create Task
       </NuxtLink>
-      <NuxtLink to="/login" class="w-full btn btn-primary mt-4">
+      <NuxtLink v-else to="/login" class="w-full btn btn-primary mt-4">
         Try App
       </NuxtLink>
     </section>

@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'task-management-fe',
+    title: 'Task Management',
     htmlAttrs: {
       lang: 'en',
     },

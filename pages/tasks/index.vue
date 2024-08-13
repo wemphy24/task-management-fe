@@ -54,49 +54,55 @@
         </div>
       </div>
 
-      <div>
+      <!-- Section Table -->
+      <div class="flex flex-col">
         <table class="items-center bg-transparent border-collapse">
           <thead>
             <tr>
               <th
-                class="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                class="px-2 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 font-semibold text-left"
               >
                 Title
               </th>
               <th
-                class="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                class="px-2 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 font-semibold text-left"
               >
                 Description
               </th>
               <th
-                class="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                class="px-2 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 font-semibold text-left"
               >
                 Due Date
               </th>
               <th
-                class="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                class="px-2 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 font-semibold text-left"
               >
                 Assign By
               </th>
               <th
-                class="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                class="px-2 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 font-semibold text-left"
               >
                 Assign To
               </th>
               <th
-                class="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                class="px-2 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 font-semibold text-left"
               >
                 Status
               </th>
               <th
-                class="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                class="px-2 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 font-semibold text-left"
               >
                 Start
               </th>
               <th
-                class="px-6 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                class="px-2 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 font-semibold text-left"
               >
                 Complete
+              </th>
+              <th
+                class="px-2 bg-blueGray-50 align-middle border border-solid border-blueGray-100 py-3 text-sm uppercase border-l-0 border-r-0 font-semibold text-left"
+              >
+                Action
               </th>
             </tr>
           </thead>
@@ -105,43 +111,29 @@
           <tbody v-else>
             <tr v-for="task in tasks.data.result.data" :key="task.id">
               <th
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700"
+                class="border-t-0 align-middle border-l-0 border-r-0 text-base p-2 text-left"
               >
                 {{ task.title }}
               </th>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-              >
+              <td class="border-t-0 align-middle border-l-0 border-r-0 p-2">
                 {{ task.description }}
               </td>
-              <td
-                class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-              >
+              <td class="border-t-0 align-center border-l-0 border-r-0 p-2">
                 {{ task.due_date }}
               </td>
-              <td
-                class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-              >
+              <td class="border-t-0 align-center border-l-0 border-r-0 p-2">
                 {{ task.assign_by }}
               </td>
-              <td
-                class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-              >
+              <td class="border-t-0 align-center border-l-0 border-r-0 p-2">
                 {{ task.user['name'] }}
               </td>
-              <td
-                class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-              >
+              <td class="border-t-0 align-center border-l-0 border-r-0 p-2">
                 {{ task.status }}
               </td>
-              <td
-                class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-              >
+              <td class="border-t-0 align-center border-l-0 border-r-0 p-2">
                 {{ task.task_start }}
               </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-              >
+              <td class="border-t-0 align-middle border-l-0 border-r-0 p-2">
                 <i class="fas fa-arrow-up text-emerald-500 mr-4"></i>
                 <div v-if="task.task_complete">
                   {{ task.task_complete }}
@@ -149,6 +141,13 @@
                 <div v-else>
                   <p>Not Finished</p>
                 </div>
+              </td>
+              <td class="border-t-0 align-center border-l-0 border-r-0 p-2">
+                <NuxtLink
+                  :to="{ name: 'tasks-id', params: { id: task.id } }"
+                  class="btn btn-primary"
+                  >Detail</NuxtLink
+                >
               </td>
             </tr>
           </tbody>
@@ -171,7 +170,7 @@ export default {
 
   async fetch() {
     this.tasks = await this.$axios.get('/task', {
-      params: { id: this.$route.params.id, limit: 8 },
+      params: { limit: 8 },
     })
     return
   },

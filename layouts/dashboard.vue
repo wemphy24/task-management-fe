@@ -27,11 +27,19 @@
           </a>
         </div>
         <div class="flex flex-col gap-4">
-          <NuxtLink :to="{ name: 'tasks' }" class="nav-link active">
+          <NuxtLink
+            :to="{ name: 'tasks' }"
+            class="nav-link"
+            active-class="active"
+          >
             <img src="/assets/svgs/ic-grid.svg" alt="" />
             Task
           </NuxtLink>
-          <NuxtLink :to="{ name: 'roles' }" class="nav-link">
+          <NuxtLink
+            :to="{ name: 'roles' }"
+            class="nav-link"
+            active-class="active"
+          >
             <img src="/assets/svgs/ic-users.svg" alt="" />
             Role
           </NuxtLink>

@@ -45,10 +45,10 @@
           </option>
         </select>
       </div>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="" class="text-grey">Status</label>
         <select
-          v-model="selectedStatus"
+          v-model="task.selectedStatus"
           id=""
           class="appearance-none input-field form-icon-chevron_down"
         >
@@ -56,7 +56,7 @@
           <option value="In Progress">In Progress</option>
           <option value="Complete">Complete</option>
         </select>
-      </div>
+      </div> -->
       <button type="submit" class="w-full btn btn-primary mt-[14px]">
         Create Task
       </button>
@@ -77,12 +77,12 @@ export default {
         due_date: '',
         assign_by: this.$auth.user.name,
         user_id: '',
-        status: this.selectedStatus,
+        status: 'Pending',
         task_start: '',
         task_complete: '',
       },
       users: [],
-      // selectedUser: '',
+      // selectedStatus: '',
     }
   },
 
